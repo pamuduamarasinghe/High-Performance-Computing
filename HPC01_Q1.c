@@ -42,12 +42,40 @@ int main(int argc,const char * arg[]){
 		}
 
 		printf("\n");
-		return 0;
+		
 
 
 	// Example 5
 	printf("Example 5 \n");
 
-	double P[] = {};
+	double P[] = {100,50,45,20,10};
+	double R[] = {0.3 ,0.5,0.7,1.3,2.3};
 
+	double V;
+	for (int i = 0; i<5 ; i++){
+		V= P[i] * R[i];
+		V= sqrt(V);
+		printf("%f,",V);
+
+	}
+	printf("\n");
+
+
+	// Example 6
+	printf("Example 6 \n");
+
+	double I[] = {0.045,0.0225,0.0114,0.0096,0.0081};
+	double r[] = {100 ,200,300,400,500};
+
+	double p;
+	for (int i = 0; i<5 ; i++){
+		p = pow(I[i],2)*r[i];
+
+		printf("%f, ",p);
+
+	}
+	printf("\n");
+
+
+	return 0;
  }
