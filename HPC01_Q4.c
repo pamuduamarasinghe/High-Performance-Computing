@@ -1,8 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 
-float pair_euclidean_distance(int x[], int y[], int z[], int i)
-{
+float pair_euclidean_distance(int x[], int y[], int z[], int i){
     int dx = x[i] - x[i + 1];
     int dy = y[i] - y[i + 1];
     int dz = z[i] - z[i + 1];
@@ -23,12 +22,10 @@ int main()
 
     printf("Pairwise distances:\n");
 
-    for (int i = 0; i < n - 1; i++)
-    {
+    for (int i = 0; i < n - 1; i++){
         float distance = pair_euclidean_distance(x, y, z, i);
 
-        printf("Distance between point %d and point %d = %.4f\n",
-               i, i + 1, distance);
+        printf("Distance between point %d and point %d = %.4f\n",i, i + 1, distance);
 
         if (distance < min_distance)
         {
@@ -42,17 +39,9 @@ int main()
 
     printf("Pair with minimum distance:\n");
 
-    printf("Point %d = (%d, %d, %d)\n",
-           min_index,
-           x[min_index],
-           y[min_index],
-           z[min_index]);
+    printf("Point %d = (%d, %d, %d)\n",min_index,x[min_index],y[min_index],z[min_index]);
 
-    printf("Point %d = (%d, %d, %d)\n",
-           min_index + 1,
-           x[min_index + 1],
-           y[min_index + 1],
-           z[min_index + 1]);
+    printf("Point %d = (%d, %d, %d)\n",min_index + 1,x[min_index + 1],y[min_index + 1],z[min_index + 1]);
 
     return 0;
 }
