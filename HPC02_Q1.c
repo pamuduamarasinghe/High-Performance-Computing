@@ -2,66 +2,41 @@
 #include <math.h>
 
 
-float f(float x){
-    return x*x*x + 10*x + 1;
+int Int_sum(int n){
+    return n*(n+1)/2;
 }
 
-float trapezoidal_rule(float a, float b, int n){
-    float h = (b - a) / n;
-    float sum = 0.5 * (f(a) + f(b));
-
-    for(int i = 1; i < n; i++){
-        sum += f(a + i * h);
+int Factorial(int n){
+    if(n == 0 || n == 1){
+        return 1;
     }
-
-    return sum * h;
-}
-
-float simpsons_rule(float a, float b, int n){
-    if(n % 2 != 0){
-        n++; // should be even
+    else{
+        return n * Factorial(n - 1);
     }
-    float h = (b - a) / n;
-    float sum = f(a) + f(b);
-
-    for(int i = 1; i < n; i++){
-        if(i % 2 == 0){
-            sum += 2 * f(a + i * h);
-        } else {
-            sum += 4 * f(a + i * h);
-        }
-    }
-
-    return sum * h / 3.0;
-}
-
-
+}   
 
 int main(){
 
-    // f(x) = x^3 + 10x + 1    for [0,2]
 
-    printf("f(x) = x^3 + 10x + 1    for [0,2]\n");
+    // Integer sum
+    printf("Input integer to get the sum of first n integers: ");
+    int n;
+    scanf("%d", &n);
+    int sum = Int_sum(n);
+
+    printf("Sum of first %d integers is: %d\n", n, sum);
 
 
-    float analytical_area = 26.0;
-    printf("Analytical Area: %.2f\n", analytical_area);
+    // Factorial Calculation
+    printf("Input integer to get the factorial: ");
+    int m;
+    scanf("%d", &m);
 
-    float a = 0.0;  // lower limit
-    float b = 2.0;  // upper limit
-    int n = 100;  // sub interval
+    printf("Factorial of %d is: %d\n", m, Factorial(m));
 
-    float trapezoidal_area = trapezoidal_rule(a, b, n);
-    printf("Trapezoidal Area: %.2f\n", trapezoidal_area);
 
-    float simpsons_area = simpsons_rule(a, b, n);
-    printf("Simpson's Area: %.2f\n", simpsons_area);
 
-    float error_trape = fabs(analytical_area - trapezoidal_area);
-    float error_simp = fabs(analytical_area - simpsons_area);
-
-    printf("Error (Trapezoidal): %.2f\n", error_trape);
-    printf("Error (Simpson's): %.2f\n", error_simp);
+   
 
     return 0;
 }
