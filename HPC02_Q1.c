@@ -54,6 +54,14 @@ int main(){
     float trapezoidal_area = trapezoidal_rule(a, b, n);
     printf("Trapezoidal Area: %.2f\n", trapezoidal_area);
 
+    float simpsons_area = simpsons_rule(a, b, n);
+    printf("Simpson's Area: %.2f\n", simpsons_area);
+
+    float error_trape = fabs(analytical_area - trapezoidal_area);
+    float error_simp = fabs(analytical_area - simpsons_area);
+
+    printf("Error (Trapezoidal): %.2f\n", error_trape);
+    printf("Error (Simpson's): %.2f\n", error_simp);
 
     return 0;
 }
