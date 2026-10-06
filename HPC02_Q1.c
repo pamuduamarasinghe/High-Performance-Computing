@@ -49,7 +49,7 @@ int main(){
 
     float a = 0.0;  // lower limit
     float b = 2.0;  // upper limit
-    int n = 1000;  // sub interval
+    int n = 100;  // sub interval
 
     float trapezoidal_area = trapezoidal_rule(a, b, n);
     printf("Trapezoidal Area: %.2f\n", trapezoidal_area);
