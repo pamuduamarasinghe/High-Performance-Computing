@@ -24,5 +24,32 @@ int main(){
     printf("The value of num2 variable is: %f\n", *ptr2);
     printf("The address of num2 variable is: %p\n", ptr2);
 
+
+
+    //3 Print messages using pointers
+    char text[] = "How are you doing friends";
+    char *pt;
+    pt = text;
+
+    for (int i=0 ; i<25; i++){
+        printf("%c", *pt);
+        pt++;
+    }
+    printf("\n");
+
+
+    char text1[] = "We will watch a movie tonight.Hope everyone will be there";
+    char *pt1;
+    pt1 = text1;
+
+    for (int i=0 ; i<25; i++){
+        printf("%c", *pt1);
+        pt1++;
+    }
+    printf("\n");
+
+
+
+
     return 0;
 }
