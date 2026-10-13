@@ -44,7 +44,7 @@ int main(){
     char *pt1;
     pt1 = text1;
 
-    for (int i=0 ; i<25; i++){
+    for (int i=0 ; i<58; i++){
         printf("%c", *pt1);
         pt1++;
     }
@@ -56,9 +56,8 @@ int main(){
     int numbers[] = {1, 2, 3, 4, 5};
     int *pt_num = numbers;
 
-    for (int i=5 ; i>0; i--){
-        printf("%d ", *pt_num);
-        pt_num++;
+    for (int i=4 ; i>=0; i--){
+        printf("%d ", *(pt_num+i));
     }
     printf("\n");
 
