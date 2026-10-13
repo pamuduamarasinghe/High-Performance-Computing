@@ -12,6 +12,8 @@ int main(){
     float num2 = 10.0;
     printf("The value of num is: %f\n", num2);
     printf("The address of num is: %p\n", &num2);
+
+    printf("\n");
    
    //2 Pointers
     int *ptr1;
@@ -24,7 +26,7 @@ int main(){
     printf("The value of num2 variable is: %f\n", *ptr2);
     printf("The address of num2 variable is: %p\n", ptr2);
 
-
+    printf("\n");
 
     //3 Print messages using pointers
     char text[] = "How are you doing friends";
@@ -49,7 +51,16 @@ int main(){
     printf("\n");
 
 
+    // Print numbers using pointers in reverse order
 
+    int numbers[] = {1, 2, 3, 4, 5};
+    int *pt_num = numbers;
+
+    for (int i=5 ; i>0; i--){
+        printf("%d ", *pt_num);
+        pt_num++;
+    }
+    printf("\n");
 
     return 0;
 }
